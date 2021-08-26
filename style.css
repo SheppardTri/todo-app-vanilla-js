@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(180deg,#7df665,#1d6429);
+  color: white;
+  font-family: 'Righteous', cursive;
+  min-height: 100vh;
+}
+
+header {
+  font-size: 1.5rem;
+}
+
+header,
+form {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form input, form button {
+  font-family: 'Roboto', sans-serif;
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  background: white;
+}
+
+form button {
+  color: #1d6429;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+form button:hover {
+  background: #1d6429;
+  color: white;
+}
+
+.todo-container,
+.completed-container {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-list,
+.completed-list {
+  min-width: 30%;
+  list-style: none;
+}
+
+.todo {
+  margin: 0.5rem;
+  background: white;
+  color: black;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.5s ease;
+}
+
+.todo li {
+  flex: 1;
+}
+
+.trash-btn, .completed-btn, .edit-btn {
+  background: #1d6429;
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.completed-btn {
+  color: #7df665;
+}
+.trash-btn:hover, .completed-btn:hover, .edit-btn:hover {
+  background: #7df665;
+  color: #1d6429;
+}
+
+.todo-item {
+  padding: 0rem 0.5rem;
+}
+
+.fa-trash,
+.fa-paw,
+.fa-edit,
+.fa-eye-slash {
+  pointer-events: none;
+}
+
+.finished {
+  text-decoration: line-through;
+  opacity: 0.5;
+  transform: translateY(8rem);
+}
+.slide {
+  transform: translateX(8rem);
+  opacity: 0;
+}
+
+.completed-header {
+  min-height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hide-completed-btn {
+  background: transparent;
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  font-size: 1rem;
+}
+.hide-completed-btn:hover {
+  color: #1d6429;
+}
+
+.hide-completed {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
+}
