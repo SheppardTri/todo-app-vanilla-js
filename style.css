@@ -56,20 +56,25 @@ form button:hover {
   list-style: none;
 }
 
-.todo {
+.list {
   margin: 0.5rem;
   background: white;
   color: black;
   font-size: 1.5rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   transition: all 0.5s ease;
-}
-
-.todo li {
   flex: 1;
 }
+.view {
+  padding: 0rem 0.5rem;
+}
+
+/* .todo li {
+  flex: 1;
+  flex-wrap: wrap;
+} */
 
 .trash-btn, .completed-btn, .edit-btn {
   background: #1d6429;
@@ -87,9 +92,10 @@ form button:hover {
   color: #1d6429;
 }
 
-.todo-item {
+/* .todo-item,
+.hidden-input {
   padding: 0rem 0.5rem;
-}
+} */
 
 .fa-trash,
 .fa-paw,
@@ -132,3 +138,25 @@ form button:hover {
   opacity: 0;
   transition: visibility 0s, opacity 0.5s linear;
 }
+
+li .edit-field {
+  display: none;
+}
+li .view {
+  display: block;
+}
+li.editing .edit-field {
+  display: block;
+  border: green;
+  margin: 0.5rem;
+  background: white;
+  color: black;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+li.editing .view {
+  display: none;
+}
+
