@@ -8,6 +8,7 @@ const hideButton = document.querySelector('.hide-completed-btn');
 //Event Listeners
 todoButton.addEventListener('click', addTodo);
 todoList.addEventListener('click', completeEditTrash);
+todoList.addEventListener('dblclick', dblCompleteEditTrash);
 completedList.addEventListener('click', unDelete);
 hideButton.addEventListener('click', hideCompleted);
 
@@ -75,7 +76,12 @@ function completeEditTrash(e) {
   //edit input
   if(item.classList[0] === 'edit-btn') {
     item.closest('li').classList.toggle('editing')
-    
+    document.querySelector('.edit-field').focus();
+    addEventListener('keypress', function(e) {
+      if(e.keyCode === 13) {
+        item.closest('li').classList.remove('editing')
+      }
+    })
   };
 
   //slide animate and remove item
@@ -87,6 +93,27 @@ function completeEditTrash(e) {
     });
   };
 };
+
+//double click text input
+function dblCompleteEditTrash(e) {
+  const item = e.target;
+  if(item.classList[0] === 'view' || 'edit-field') {
+    item.closest('li').classList.add('editing')
+    document.querySelector('.edit-field').focus();
+  };
+  addEventListener('keypress', function(e) {
+    if(e.keyCode === 13) {
+      item.closest('li').classList.remove('editing')
+    }
+  })
+};
+//press enter to submit
+function enterSubmit(e) {
+  const item = e.target;
+  if(e.key === 13) {
+    item.closest('li').classList.toggle('editing')
+  }
+}
 
 function unDelete(e) {
   const item = e.target;
