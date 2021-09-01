@@ -71,11 +71,6 @@ form button:hover {
   padding: 0rem 0.5rem;
 }
 
-/* .todo li {
-  flex: 1;
-  flex-wrap: wrap;
-} */
-
 .trash-btn, .completed-btn, .edit-btn {
   background: #1d6429;
   color: white;
@@ -91,11 +86,6 @@ form button:hover {
   background: #7df665;
   color: #1d6429;
 }
-
-/* .todo-item,
-.hidden-input {
-  padding: 0rem 0.5rem;
-} */
 
 .fa-trash,
 .fa-paw,

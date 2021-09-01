@@ -76,7 +76,8 @@ function completeEditTrash(e) {
   //edit input
   if(item.classList[0] === 'edit-btn') {
     item.closest('li').classList.toggle('editing')
-    document.querySelector('.edit-field').focus();
+    inputFocus = item.closest('.list')
+    inputFocus.querySelector('.edit-field').focus();
     addEventListener('keypress', function(e) {
       if(e.keyCode === 13) {
         item.closest('li').classList.remove('editing')
@@ -99,7 +100,8 @@ function dblCompleteEditTrash(e) {
   const item = e.target;
   if(item.classList[0] === 'view' || 'edit-field') {
     item.closest('li').classList.add('editing')
-    document.querySelector('.edit-field').focus();
+    inputFocus = item.closest('.list')
+    inputFocus.querySelector('.edit-field').focus();
   };
   addEventListener('keypress', function(e) {
     if(e.keyCode === 13) {
