@@ -102,6 +102,9 @@ function dblCompleteEditTrash(e) {
     item.closest('li').classList.add('editing')
     inputFocus = item.closest('.list')
     inputFocus.querySelector('.edit-field').focus();
+    inputFocus.querySelector('.edit-field').onblur = function() {
+      item.closest('li').classList.remove('editing')
+    }
   };
   addEventListener('keypress', function(e) {
     if(e.keyCode === 13) {
